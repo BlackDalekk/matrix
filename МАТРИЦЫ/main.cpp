@@ -2,6 +2,7 @@
 #include "matrix.h"
 #include "foo.h"
 #include <iostream>
+#include <conio.h>
 
 using namespace std;
 int main() {
@@ -30,6 +31,7 @@ int main() {
 	default:
 		break;
 	}
-	system("pause");
+	cout << "Нажмите любую клавишу для выхода . . .\n";
+	_getch();
 	return 0;
 }
