@@ -5,7 +5,7 @@ const int i = 100, j = 100;
 class matrix
 {
 	int _i, _j; //i - строка, j - столбец
-	int element[i][j];
+	float element[i][j];
 public:
 	matrix();
 	matrix(int n);

@@ -86,7 +86,7 @@ void matrix::the_filling_of_the_matrix()
 				cin >> str;
 				if (is_Number(str)) {
 					cin.ignore(10, '\n');
-					element[i][j] = atoi(str.c_str());
+					element[i][j] = atof(str.c_str());
 					break;
 				}
 				cin.ignore(10, '\n');
@@ -100,23 +100,20 @@ void matrix::dispaly_of_the_matrix()
 {
 	cout << endl;
 	for (int i = 0; i < _i; i++) {
-		if (i == 0 )
-			cout << " /";
-		else if(i == _i - 1)
-			cout << " \\";
-		else
-			cout << "| ";
+		if (_i == 1) cout << " ( ";
+		else if (i == 0 ) cout << " /";
+		else if(i == _i - 1) cout << " \\";
+		else cout << "| ";
 		
 
 		for (int j = 0; j < _j; j++)
 			cout << setw(4) << element[i][j] << " ";
 
-		if (i == 0)
-			cout << " \\ ";
-		else if (i == _i - 1)
-			cout << " / ";
-		else
-			cout << "  |";
+		if (_i == 1) cout << " ) ";
+		else if (i == 0) cout << " \\ ";
+		else if (i == _i - 1) cout << " / ";
+		else cout << "  |";
+		
 		cout << endl;
 	}
 }
@@ -186,7 +183,7 @@ void matrix::multiplication_of_matrix_by_a_number()
 		cin >> str;
 		if (is_Multiplier(str)) {
 			cin.ignore(10, '\n');
-			k = atoi(str.c_str());
+			k = atof(str.c_str());
 			break;
 		}
 		cin.ignore(10, '\n');
@@ -204,7 +201,7 @@ void matrix::matrix_product()
 	B.determining_the_size_of_the_matrix();
 	B.the_filling_of_the_matrix();
 	if (A._j != B._i) {
-		cerr << "111\n";
+		cerr << "Ошибка!\nКол-во столбцов первой матрицы не совпадает с кол-вом строк второй матрицы!\n";
 		return;
 	}
 	matrix C(A._i, B._j);
